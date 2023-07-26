@@ -10,8 +10,12 @@
         {% block javascripts %}
         {% endblock %}
     </head>
-    <body>
+
     <h1>Welcome</h1>
+        {% for message in app.session.flashBag.get('success') %}
+        <div style="color: green;">{{ message }}</div>
+        {% endfor %}
+
         {% block body %}{% endblock %}
     </body>
 </html>
